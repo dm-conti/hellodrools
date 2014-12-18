@@ -1,0 +1,10 @@
+//created on: 20-ott-2014
+package rules.giomes.sample2
+
+rule "Status output when things are ok"
+when
+    not Alarm()
+    not Sprinkler( on == true ) 
+then
+    System.out.println( "Everything is ok" );
+end

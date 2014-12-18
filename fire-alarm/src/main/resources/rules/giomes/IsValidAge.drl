@@ -1,0 +1,21 @@
+//created on: 16-ott-2014
+package rules.giomes
+
+import com.sample.domain.Applicant
+import com.sample.domain.Application
+
+rule "Is of valid age"
+when
+    Applicant( age < 18 )
+    $a : Application()     
+then
+    $a.setValid( false );
+end
+
+rule "Application was made this year"
+when
+    $a : Application( dateApplied > "01-jan-2009" )     
+then
+    $a.setValid( false );
+end
+

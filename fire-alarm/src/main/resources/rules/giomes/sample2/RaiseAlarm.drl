@@ -1,0 +1,13 @@
+//created on: 20-ott-2014
+package rules.giomes.sample2
+
+import com.sample2.domain.Fire;
+import com.sample2.domain.Alarm;
+
+rule "Raise the alarm when we have one or more fires"
+when
+    exists Fire()
+then
+    insert( new Alarm() );
+    System.out.println( "Raise the alarm" );
+end

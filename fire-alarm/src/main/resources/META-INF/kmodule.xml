@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+    <kbase name="rules" packages="rules">
+        <ksession name="ksession-rules"/>
+    </kbase>
+    <kbase name="giomes-rules-kb" packages="rules.giomes">
+        <ksession name="giomes-rules-ks"/>
+    </kbase>
+    <kbase name="giomes-rules-kb2" packages="rules.giomes.sample2">
+        <ksession name="giomes-rules-ks2"/>
+    </kbase>
+    
+    <kbase name="dtables" packages="dtables">
+        <ksession name="ksession-dtables"/>
+    </kbase>
+    <kbase name="process" packages="process">
+        <ksession name="ksession-process"/>
+    </kbase>
+</kmodule>

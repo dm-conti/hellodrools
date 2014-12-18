@@ -1,0 +1,15 @@
+//created on: 20-ott-2014
+package rules.giomes.sample2;
+
+import com.sample2.domain.Fire;
+import com.sample2.domain.Sprinkler;
+
+rule "When there is a fire turn on the sprinkler"
+when
+    Fire($room : room)
+    $sprinkler : Sprinkler( room == $room, on == false )
+then
+    modify( $sprinkler ) { setOn( true ) };
+    System.out.println( "Turn on the sprinkler for room " + $room.getName() );
+end
+

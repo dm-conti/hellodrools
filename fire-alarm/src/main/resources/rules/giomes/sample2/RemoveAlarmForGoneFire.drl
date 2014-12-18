@@ -1,0 +1,15 @@
+//created on: 20-ott-2014
+package rulses.giomes.sample2
+
+import com.sample2.domain.Fire;
+import com.sample2.domain.Alarm;
+
+
+rule "Cancel the alarm when all the fires have gone"
+when
+    not Fire()
+    $alarm : Alarm()
+then
+    delete( $alarm );
+    System.out.println( "Cancel the alarm" );
+end
